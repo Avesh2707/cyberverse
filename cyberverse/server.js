@@ -80,9 +80,10 @@ app.use('/api/submit-flag', flagRoutes);
 app.use('/api/ctf-news', newsRoutes);
 app.use('/api/live-ctfs', ctfRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
+
 app.use('/api/admin', adminRoutes);
 app.use('/api/users', userRoutes);
-
+app.use('/api/chatbot', require('./routes/chatbot.route'));
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ success: false, message: `Route ${req.originalUrl} not found` });
